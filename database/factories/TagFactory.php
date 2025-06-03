@@ -18,7 +18,7 @@ class TagFactory extends Factory
     {
         return [
             //
-            'name' => fake()->unique()->name,
+            'name' => fake()->unique()->word,
         ];
     }
 }
