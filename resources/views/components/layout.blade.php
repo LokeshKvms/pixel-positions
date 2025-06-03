@@ -29,9 +29,23 @@
                 <a href="#">Companies</a>
             </div>
 
-            <div class="">
-                <a href="#">Post a Job</a>
+            @auth
+                <div class="flex space-x-6 font-bold">
+                    <a href="/jobs/create">Post a Job</a>
+                    <form action="/logout" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="cursor-pointer">Logout</button>
+                    </form>
+                </div>
+            @endauth
+
+            @guest()
+            <div class="space-x-6 font-bold">
+                <a href="/register">Sign up</a>
+                <a href="/login">Login</a>
             </div>
+            @endguest
         </nav>
 
         <main class="mt-10 max-w-[986px] mx-auto mb-10">

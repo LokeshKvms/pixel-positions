@@ -1,2 +1,2 @@
-@props(['dim'=> '100'])
-<img class="rounded-xl" src="https://picsum.photos/seed/{{rand(0,100000)}}/{{$dim}}" alt="hahah">
+@props(['employer','dim'=> '100'])
+<img class="rounded-xl" src="{{ asset($employer->logo) }}" alt="logo" style="width: {{ $dim }}px; height: {{ $dim }}px;">
